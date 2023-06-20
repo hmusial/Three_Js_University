@@ -69,7 +69,7 @@
 				<br />
 				(W, A, S, D = Poruszanie się, F = Latarka ON/OFF)
 				<br />
-				Przytrzymaj X, aby założyć maskę... ma to jednak konsekwencje
+				Przytrzymaj X, aby założyć maskę... ma to jednak swoje konsekwencje
 			</div>
 
 		</div>
@@ -91,9 +91,6 @@
 			var ray;
 			var xKeyPressed = false;
 			var instructions = document.getElementById( 'instructions' );
-
-			// http://www.html5rocks.com/en/tutorials/pointerlock/intro/
-
 			var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
 
 			if ( havePointerLock ) {
@@ -194,8 +191,8 @@
 				ray = new THREE.Raycaster();
 				ray.ray.direction.set( 0, -1, 0 );
 
-				// główne światło
-				main_light = new THREE.AmbientLight( 0xf0f0f0 ); // soft white light
+				// Główne światło
+				main_light = new THREE.AmbientLight( 0xf0f0f0 );
 				scene.add( main_light );
 
 				// "Skybox"
@@ -277,7 +274,7 @@
 				joker_masked = new THREE.Mesh(new THREE.BoxGeometry(100, 100, 1), joker_masked_Material);
 				scene.add(joker_normal);
 
-				//Junko - postać po lewej
+				//Enoshima Junko-chan - postać po lewej
 				junko_normal_Texture = new THREE.TextureLoader().load('Junko_normal.png');
 				junko_scared_Texture = new THREE.TextureLoader().load('Junko_scared.png');
 				junko_Material = new THREE.MeshStandardMaterial({ map: junko_normal_Texture, color: 0xffffff, transparent: true, alphaTest: 0.5 });
@@ -505,8 +502,6 @@
 				renderer.render(scene, camera);
 				time = Date.now();
 			}
-
-
 
 		</script>
 	</body>
